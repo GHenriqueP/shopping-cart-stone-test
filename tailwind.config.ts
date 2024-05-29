@@ -52,6 +52,9 @@ const config: Config = {
       borderRadius: {
         '5xl': '40px',
       },
+      gridTemplateColumns: {
+        'auto-fill-minmax': 'repeat(auto-fill, minmax(200px, 1fr))',
+      },
     },
   },
   plugins: [],

@@ -37,4 +37,22 @@ body {
   .flexEnd {
     @apply flex items-center justify-end;
   }
+
+  .shadow-outline {
+    transition: box-shadow 0.5s ease;
+  }
+
+  .shadow-outline:hover {
+    box-shadow: 0 0 0 3px #eaeaea; /* Modifique a cor e a largura conforme necessário */
+  }
+
+  .zoom-effect {
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+  }
+
+  .zoom-effect:hover {
+    transform: scale(
+      1.05
+    ); /* Aumenta a escala do elemento em 5% quando hover */
+  }
 }
