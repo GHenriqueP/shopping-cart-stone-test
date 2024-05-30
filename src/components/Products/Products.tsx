@@ -4,16 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Loading from "./Loading";
 import ProductCard from "./ProductCard";
 import { AppContext } from "@/context/AppContext";
-import { Product } from "@/api/fetchProducts";
-
-const fetchProducts = async (): Promise<Product[]> => {
-  const response = await fetch("https://fakestoreapi.com/products");
-  if (!response.ok) {
-    throw new Error("Failed to fetch products");
-  }
-  const data: Product[] = await response.json();
-  return data;
-};
+import { Product, getProducts } from "@/services/ProductService";
 
 const Products: React.FC = () => {
   const { products, setProducts, loading, setLoading, searchValue } =
@@ -24,9 +15,8 @@ const Products: React.FC = () => {
     const loadProducts = async () => {
       setLoading(true);
       try {
-        const fetchedProducts = await fetchProducts();
+        const fetchedProducts = await getProducts();
         setProducts(fetchedProducts);
-        console.log("Products fetched and set:", fetchedProducts);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -61,12 +51,12 @@ const Products: React.FC = () => {
       ) : (
         <section className="max-container padding-container relative pr-5 pt-28 pb-12 grid grid-cols-auto-fill-minmax gap-5">
           {filteredProducts.length === 0 ? (
-            <p className="flex items-center justify-center">
+            <p className="font-semibold text-xl whitespace-nowrap">
               Nenhum produto encontrado.
             </p>
           ) : (
             filteredProducts.map((product) => (
-              <ProductCard key={product.id} data={product} />
+              <ProductCard key={product.id} {...product} />
             ))
           )}
         </section>

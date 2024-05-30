@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, Dispatch, SetStateAction } from 'react';
-import { Product } from '../api/fetchProducts';
+import { Product } from '../services/ProductService';
 
 export interface AppContextType {
   products: Product[];

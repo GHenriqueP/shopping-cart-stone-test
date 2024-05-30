@@ -5,9 +5,10 @@ export interface Product {
   description: string;
   category: string;
   image: string;
+  quantity?: number;
 }
 
-const fetchProducts = async (): Promise<Product[]> => {
+export const getProducts = async (): Promise<Product[]> => {
   const response = await fetch('https://fakestoreapi.com/products');
   if (!response.ok) {
     throw new Error('Failed to fetch products');
@@ -17,4 +18,3 @@ const fetchProducts = async (): Promise<Product[]> => {
   return data;
 };
 
-export default fetchProducts;
