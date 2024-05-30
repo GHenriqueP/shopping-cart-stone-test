@@ -55,6 +55,9 @@ const config: Config = {
       gridTemplateColumns: {
         'auto-fill-minmax': 'repeat(auto-fill, minmax(200px, 1fr))',
       },
+      borderWidth: {
+        '1': '1px',
+      },
     },
   },
   plugins: [],

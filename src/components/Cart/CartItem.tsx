@@ -15,7 +15,7 @@ const CartItem: React.FC<Product> = ({ id, image, price, title }) => {
   };
 
   return (
-    <section className="flex items-start relative rounded-lg pb-1 mb-2 bg-zinc-50">
+    <section className="flex items-start relative pb-1 mb-2 border-b-1 border-solid border-slate-200 last:border-b-0">
       <Image
         src={image}
         alt="test"
@@ -26,13 +26,11 @@ const CartItem: React.FC<Product> = ({ id, image, price, title }) => {
 
       <div className="pr-8 pl-2 pt-2">
         <h3 className="text-sm font-semibold text-gray-400 mb-2">{title}</h3>
-        <h3 className="text-2xl font-semibold">
-          {formatCurrency(price, "BRL")}
-        </h3>
+        <h3 className="text-2xl font-medium">{formatCurrency(price, "BRL")}</h3>
 
         <button
           type="button"
-          className="absolute top-0 right-0 text-red-700 text-lg border-none cursor-pointer p"
+          className="absolute top-2 right-0 text-red-700 text-lg border-none cursor-pointer "
           onClick={handleRemoveItem}
         >
           <RemoveShoppingCartIcon sx={{ fontSize: 25 }} />

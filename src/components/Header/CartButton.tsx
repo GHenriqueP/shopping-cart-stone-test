@@ -7,12 +7,10 @@ import AppContext from "@/context/AppContext";
 const CartButton = () => {
   const { showCart, setShowCart } = useContext(AppContext);
 
-  console.log("Botão:", showCart);
-
   return (
     <button
       type="button"
-      className="text-xl flex items-center justify-center p-[5px] border-none bg-none cursor-pointer relative ml-5 text-gray-800 bg-zinc-50 rounded-lg w-14 h-14"
+      className="text-xl flex items-center justify-center p-[5px] border-none bg-none cursor-pointer relative ml-5 text-gray-800"
       onClick={() => setShowCart(!showCart)}
     >
       <ShoppingCartOutlinedIcon sx={{ fontSize: 40 }} />

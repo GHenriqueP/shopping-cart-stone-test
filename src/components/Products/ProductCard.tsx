@@ -36,7 +36,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
         height={500} // Defina a altura da imagem
       />
       <div className="py-5 px-8 border-t border-gray-50">
-        <h2 className="text-2xl text-gray-800 font-semibold mb-2">
+        <h2 className="text-2xl text-gray-800 font-medium mb-2">
           {formatCurrency(price, "BRL")}
         </h2>
         <h2 className="card__title text-base text-gray-300 font-medium">
