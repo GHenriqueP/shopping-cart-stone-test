@@ -8,11 +8,12 @@ interface AppProviderProps {
   children: ReactNode;
 }
 
-const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
+export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [showCart, setShowCart] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   return (
     <AppContext.Provider
@@ -25,6 +26,8 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         setShowCart,
         cartItems,
         setCartItems,
+        searchValue,
+        setSearchValue,
       }}
     >
       {children}

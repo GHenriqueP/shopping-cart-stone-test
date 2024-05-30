@@ -3,6 +3,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import formatCurrency from "../../utils/formatCurrency";
 import Image from "next/image";
 import AppContext from "@/context/AppContext";
+import Product from "../../api/fetchProducts";
 
 export interface Product {
   id: number;

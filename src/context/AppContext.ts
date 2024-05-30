@@ -3,7 +3,7 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 import { Product } from '../api/fetchProducts';
 
-interface AppContextType {
+export interface AppContextType {
   products: Product[];
   setProducts: Dispatch<SetStateAction<Product[]>>;
   loading: boolean;
@@ -12,9 +12,11 @@ interface AppContextType {
   setShowCart: Dispatch<SetStateAction<boolean>>; 
   cartItems: Product[];
   setCartItems: Dispatch<SetStateAction<Product[]>>;
+  searchValue: string; 
+  setSearchValue: Dispatch<SetStateAction<string>>; 
 }
 
-const AppContext = createContext<AppContextType>({
+export const AppContext = createContext<AppContextType>({
   products: [],
   setProducts: () => {},
   loading: false,
@@ -23,6 +25,8 @@ const AppContext = createContext<AppContextType>({
   setShowCart: () => {},
   cartItems: [],
   setCartItems: () => {},
+  searchValue: "", 
+  setSearchValue: () => {}, 
 });
 
 
