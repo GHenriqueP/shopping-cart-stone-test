@@ -54,19 +54,21 @@ const Products: React.FC = () => {
     filterProducts();
   }, [products, searchValue]);
 
-  useEffect(() => {
-    console.log("Current products in context:", products);
-  }, [products]);
-
   return (
     <>
       {loading ? (
         <Loading />
       ) : (
         <section className="max-container padding-container relative pr-5 pt-28 pb-12 grid grid-cols-auto-fill-minmax gap-5">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} data={product} />
-          ))}
+          {filteredProducts.length === 0 ? (
+            <p className="flex items-center justify-center">
+              Nenhum produto encontrado.
+            </p>
+          ) : (
+            filteredProducts.map((product) => (
+              <ProductCard key={product.id} data={product} />
+            ))
+          )}
         </section>
       )}
     </>
