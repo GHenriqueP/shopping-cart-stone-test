@@ -4,7 +4,7 @@ import formatCurrency from "../../utils/formatCurrency";
 import Image from "next/image";
 import AppContext from "@/context/AppContext";
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   price: number;
@@ -22,7 +22,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const { title, image, price } = data;
   const { cartItems, setCartItems } = useContext(AppContext);
 
-  const handleAddCart = () => setCartItems([...cartItems, data]);
+  const handleAddCart = () => {
+    setCartItems([...cartItems, data]);
+  };
 
   return (
     <section className="relative w-full max-w-72 bg-white flex flex-col cursor-pointer mx-auto border-2 border-solid rounded-lg border-slate-50 hover:shadow-outline transition-transform transform hover:scale-105">
