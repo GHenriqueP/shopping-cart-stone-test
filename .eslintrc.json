@@ -1,25 +1,10 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
   "rules": {
-    "indent": [
-        "error",
-        2
-    ],
-    "linebreak-style": [
-        "error",
-        "unix"
-    ],
-    "semi": [
-        "error",
-        "always"
-    ],
-    "jsx-quotes": [
-        2,
-        "prefer-double"
-    ],
-    "eol-last": [
-        "error",
-        "always"
-    ]
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "semi": ["error", "always"],
+    "jsx-quotes": [2, "prefer-double"],
+    "eol-last": ["error", "always"]
   }
 }
