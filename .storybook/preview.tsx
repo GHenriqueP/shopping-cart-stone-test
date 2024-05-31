@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import React from "react";
 import "../src/app/globals.css";
-import { baiJamjuree, roboto } from "../src/app/layout";
+import { inter, roboto } from "../src/app/layout";
 
 const preview: Preview = {
   parameters: {
@@ -22,7 +22,7 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <main
-        className={`${roboto.variable} ${baiJamjuree.variable} font-sans relative`}
+        className={`${roboto.variable} ${inter.variable} font-sans relative`}
       >
         <Story />
       </main>

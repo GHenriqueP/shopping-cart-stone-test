@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {
-  Roboto_Flex as Roboto,
-  Bai_Jamjuree as BaiJamjuree,
-} from "next/font/google";
 import AppProvider from "@/context/AppProvider";
+import { Roboto, Inter } from "next/font/google";
 
-export const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto" });
-export const baiJamjuree = BaiJamjuree({
+const roboto = Roboto({
+  weight: "400",
   subsets: ["latin"],
-  weight: "700",
-  variable: "--font-bai-jamjuree",
+  variable: "--font-roboto",
 });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Shopping Cart",
@@ -26,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${baiJamjuree.variable} font-sans bg-gray-50 text-gray-700`}
+        className={`${roboto.variable} ${inter.variable} font-sans bg-gray-50 text-gray-700`}
       >
         <AppProvider>{children}</AppProvider>
       </body>

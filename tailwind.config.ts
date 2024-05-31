@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: 'var(--font-roboto)',
-        alt: 'var(--font-bai-jamjuree)'
+        alt: 'var(--font-inter)'
       },
 
       colors: {

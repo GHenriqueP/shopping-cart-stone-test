@@ -2,7 +2,7 @@
 
 import React, { useState, ReactNode } from "react";
 import AppContext from "./AppContext";
-import { Product } from "../services/fetchProducts";
+import { Product } from "../services/ProductService";
 
 interface AppProviderProps {
   children: ReactNode;
