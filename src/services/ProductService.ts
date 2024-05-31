@@ -9,7 +9,7 @@ export interface Product {
 }
 
 export const getProducts = async (): Promise<Product[]> => {
-  const response = await fetch('https://fakestoreapi.com/products');
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVICE_API}/products`);
   if (!response.ok) {
     throw new Error('Failed to fetch products');
   }

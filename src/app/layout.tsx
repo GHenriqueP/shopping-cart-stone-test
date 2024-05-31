@@ -6,8 +6,8 @@ import {
 } from "next/font/google";
 import AppProvider from "@/context/AppProvider";
 
-const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto" });
-const baiJamjuree = BaiJamjuree({
+export const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto" });
+export const baiJamjuree = BaiJamjuree({
   subsets: ["latin"],
   weight: "700",
   variable: "--font-bai-jamjuree",

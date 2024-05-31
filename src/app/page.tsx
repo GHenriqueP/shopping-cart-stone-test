@@ -1,6 +1,6 @@
-import Cart from "@/components/Cart/Cart";
-import Header from "@/components/Header/Header";
-import Products from "@/components/Products/Products";
+import Cart from "@/components/Cart";
+import Header from "@/components/Header";
+import Products from "@/components/Products";
 
 export default function Home() {
   return (

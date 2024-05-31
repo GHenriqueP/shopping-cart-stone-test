@@ -39,13 +39,35 @@ const CartItem: React.FC<Product> = ({ id, image, price, title, quantity }) => {
           alt={title}
           width={70}
           height={70}
-          className="w-20 rounded-lg px-2 py-2 flex justify-center"
+          className="w-20 rounded-lg px-2 py-2 flex justify-center object-contain"
         />
 
         <div className="pr-8 pl-2 pt-2 flex-grow">
           <h3 className="text-sm font-semibold text-gray-400 mb-2">{title}</h3>
+
+          <div className="w-full flex gap-2 mb-2">
+            <button
+              type="button"
+              className="text-gray-400 px-1 py-1/2 disabled:text-white"
+              onClick={handleDecreaseQuantity}
+              disabled={!!((quantity || 1) <= 1)}
+            >
+              <Remove sx={{ fontSize: 16 }} />
+            </button>
+            <div className="px-1 py-1/2">
+              <span>{quantity || 1}</span>
+            </div>
+            <button
+              type="button"
+              className="text-gray-400 px-1 py-1/2"
+              onClick={handleIncreaseQuantity}
+            >
+              <Add sx={{ fontSize: 16 }} />
+            </button>
+          </div>
+
           <h3 className="text-xl font-medium">
-            {formatCurrency(price, "BRL")}
+            {formatCurrency((quantity || 1) * price, "BRL")}
           </h3>
 
           <button
@@ -56,26 +78,6 @@ const CartItem: React.FC<Product> = ({ id, image, price, title, quantity }) => {
             <RemoveShoppingCart sx={{ fontSize: 25 }} />
           </button>
         </div>
-      </div>
-
-      <div className="w-full flex justify-center">
-        <button
-          type="button"
-          className="text-white bg-red-400 hover:bg-red-700 rounded-lg p-2"
-          onClick={handleDecreaseQuantity}
-        >
-          <Remove />
-        </button>
-        <div className="px-4 py-2 rounded-lg bg-gray-50 mx-2">
-          <span>{quantity || 1}</span>
-        </div>
-        <button
-          type="button"
-          className="text-white bg-green-300 hover:bg-green-700 rounded-lg p-2"
-          onClick={handleIncreaseQuantity}
-        >
-          <Add />
-        </button>
       </div>
     </section>
   );

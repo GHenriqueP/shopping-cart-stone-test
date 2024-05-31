@@ -1,6 +1,6 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import CartButton from "./CartButton";
+import CartButton from "../CartButton";
+import SearchBar from "../SearchBar";
 
 const Header = () => {
   return (

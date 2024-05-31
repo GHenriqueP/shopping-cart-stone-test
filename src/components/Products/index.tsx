@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useContext, useEffect, useState } from "react";
-import Loading from "./Loading";
-import ProductCard from "./ProductCard";
+import Loading from "../Loading";
+import ProductCard from "../ProductCard";
 import { AppContext } from "@/context/AppContext";
 import { Product, getProducts } from "@/services/ProductService";
 
