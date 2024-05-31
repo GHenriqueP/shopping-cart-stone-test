@@ -3,12 +3,12 @@ import "./globals.css";
 import AppProvider from "@/context/AppProvider";
 import { Roboto, Inter } from "next/font/google";
 
-export const roboto = Roboto({
+const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-roboto",
 });
-export const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Shopping Cart",

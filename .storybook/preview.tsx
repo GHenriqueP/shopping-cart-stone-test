@@ -1,7 +1,14 @@
 import type { Preview } from "@storybook/react";
 import React from "react";
 import "../src/app/globals.css";
-import { inter, roboto } from "../src/app/layout";
+import { Roboto, Inter } from "next/font/google";
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-roboto",
+});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const preview: Preview = {
   parameters: {
